@@ -60,7 +60,7 @@
                 </td>
                 <td>
                     <a class="btn btn-primary mx-2">Update</a>
-                    <a class="btn btn-danger mx-2">Delete</a>
+                    <a th:href="@{/front/students/delete/{id}(id=${student.id})}" class="btn btn-danger mx-2">Delete</a>
                 </td>
 
             </tr>
@@ -68,6 +68,14 @@
         </tbody>
     </table>
 </div>
+<div >
+    <form action="/front/students/addStudentPage" method="get">
+        <button type="submit" class="btn btn-danger mx-2">Add Student</button>
+    </form>
 
+    <form action="/front/teachers/addTeacherPage" method="get">
+        <button type="submit" class="btn btn-primary mx-2">Add Teacher</button>
+    </form>
+</div>
 </body>
 </html>
