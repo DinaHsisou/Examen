@@ -21,5 +21,5 @@ public class Note {
     @JoinColumn(name = "cours_id", nullable = false)
     private Cours cours;
 
-    private double note;
+    private String note;
 }

@@ -22,14 +22,14 @@ public class Student {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
+//    private String password;
 
     @OneToMany(mappedBy = "student")
     private List<Note> notes = new ArrayList<>();
 
     @ManyToMany( cascade = CascadeType.ALL)
     @JoinTable(
-            name = "student_teacher",
+            name = "student_project",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "teacher_id")
     )

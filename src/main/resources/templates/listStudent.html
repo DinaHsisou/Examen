@@ -13,7 +13,7 @@
 <body>
 <div class="container my-2" align="center">
 
-    <h1>Liste des étudiants</h1>
+    <h1>Employe List</h1>
     <table style="width:100%"
            class = "table table-striped">
         <thead>
@@ -22,10 +22,10 @@
             <th>Prénom</th>
             <th>Nom</th>
             <th>Email</th>
-            <th>Mot de passe </th>
-            <th>Enseignants</th>
-            <th>Cours</th>
-            <th>Notes</th>
+<!--            <th>Mot de passe </th>-->
+            <th>Projects</th>
+<!--            <th>Cours</th>-->
+            <th>Skills</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -37,21 +37,21 @@
                 <td th:text="${student.firstName}"></td>
                 <td th:text="${student.lastName}"></td>
                 <td th:text="${student.email}"></td>
-                <td th:text="${student.password}"></td>
+<!--                <td th:text="${student.password}"></td>-->
                 <td>
                     <!-- Boucle sur la liste des enseignants -->
                     <th:block th:each="teacher : ${student.teachers}">
                         <span th:text="${teacher.name}"></span><br/>
                     </th:block>
                 </td>
-                <td>
-<!--                     Boucle sur la liste des cours-->
-                    <th:block th:each="note : ${student.notes}">
-<!--                        <textarea th:text="${note.cours.title}"></textarea>-->
-                        <span th:text="${note.cours.title}"></span><br/>
-                    </th:block>
+<!--                <td>-->
+<!--&lt;!&ndash;                     Boucle sur la liste des cours&ndash;&gt;-->
+<!--                    <th:block th:each="note : ${student.notes}">-->
+<!--&lt;!&ndash;                        <textarea th:text="${note.cours.title}"></textarea>&ndash;&gt;-->
+<!--                        <span th:text="${note.cours.title}"></span><br/>-->
+<!--                    </th:block>-->
 
-                </td>
+<!--                </td>-->
                 <td>
                     <!-- Boucle sur la liste des notes -->
                     <th:block th:each="note : ${student.notes}">
@@ -59,7 +59,7 @@
                     </th:block>
                 </td>
                 <td>
-                    <a class="btn btn-primary mx-2">Update</a>
+<!--                    <a class="btn btn-primary mx-2">Update</a>-->
                     <a th:href="@{/front/students/delete/{id}(id=${student.id})}" class="btn btn-danger mx-2">Delete</a>
                 </td>
 
@@ -70,11 +70,11 @@
 </div>
 <div >
     <form action="/front/students/addStudentPage" method="get">
-        <button type="submit" class="btn btn-danger mx-2">Add Student</button>
+        <button type="submit" class="btn btn-danger mx-2">Add Employee</button>
     </form>
 
     <form action="/front/teachers/addTeacherPage" method="get">
-        <button type="submit" class="btn btn-primary mx-2">Add Teacher</button>
+        <button type="submit" class="btn btn-primary mx-2">Affecter Project</button>
     </form>
 </div>
 </body>
